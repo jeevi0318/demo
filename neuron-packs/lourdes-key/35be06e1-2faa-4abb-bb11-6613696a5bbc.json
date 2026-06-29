@@ -1,0 +1,51 @@
+{
+  "id": "35be06e1-2faa-4abb-bb11-6613696a5bbc",
+  "name": "Atomic Transform Neuron \u2014 canvas state",
+  "neurons": [
+    {
+      "id": "8bb3fd3c-d681-4a5e-9b46-6f69fbdd4115",
+      "name": "Data Transform",
+      "description": "",
+      "neuron_type": "interactive",
+      "topology_profile": "atomic_io",
+      "cells": [
+        {
+          "id": "c1",
+          "type": "compute_transform",
+          "input": {
+            "required": false,
+            "input_type": null,
+            "input_ports": 1,
+            "port_labels": [],
+            "input_schema": {}
+          },
+          "config": {
+            "user_code": "# TODO: Replace with your transformation logic.\n# Read inputs via `payload` (dot-access), e.g. payload.my_field\n# Assign the final output to `result` \u2014 do NOT use return, res, or output.\n\nresult = payload",
+            "timeout_ms": 5000,
+            "max_memory_mb": 256
+          },
+          "output": {
+            "output_type": null,
+            "port_labels": [],
+            "output_ports": 1,
+            "output_schema": {}
+          },
+          "metadata": {
+            "icon": null,
+            "name": null,
+            "tags": [],
+            "color": null,
+            "label": "Apply Data Transform",
+            "enabled": true,
+            "visible": true,
+            "position": null,
+            "description": "Pure compute transformation \u2014 reads from payload and writes to result."
+          },
+          "saved_cell_id": "b04a05de-f67f-4641-990e-a3108861961f",
+          "saved_cell_version": 1
+        }
+      ],
+      "connections": []
+    }
+  ]
+}
