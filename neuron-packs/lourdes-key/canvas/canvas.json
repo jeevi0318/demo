@@ -1,0 +1,169 @@
+{
+  "id": "e8fc44f1-c739-49f5-8f71-5e97fc96f8e7",
+  "name": "canvas",
+  "neurons": [
+    {
+      "id": "0ad1513b-dd42-42a3-9a28-e21a06e8d627",
+      "name": "durable test",
+      "description": "",
+      "neuron_type": "interactive",
+      "topology_profile": null,
+      "cells": [],
+      "connections": []
+    },
+    {
+      "id": "5107bfb8-164f-4f32-a4c1-e589a21d5ac8",
+      "name": "cyclic test",
+      "description": "",
+      "neuron_type": "interactive",
+      "topology_profile": null,
+      "cells": [],
+      "connections": []
+    },
+    {
+      "id": "f9bce8c5-56af-49bd-848b-6e1aebb32b42",
+      "name": "linear test",
+      "description": "",
+      "neuron_type": "interactive",
+      "topology_profile": null,
+      "cells": [],
+      "connections": []
+    },
+    {
+      "id": "367aadf0-733a-4eee-84db-5074a4032787",
+      "name": "Atomic Transform",
+      "description": "",
+      "neuron_type": "interactive",
+      "topology_profile": "atomic_io",
+      "cells": [
+        {
+          "id": "c1",
+          "type": "compute_transform",
+          "input": {
+            "required": false,
+            "input_type": null,
+            "input_ports": 1,
+            "port_labels": [],
+            "input_schema": {}
+          },
+          "config": {
+            "user_code": "# TODO: Replace with your transformation logic.\n# Read from `payload` (dot-access), assign output to `result`.\n\n# Example passthrough \u2014 returns the full input payload as-is.\nresult = payload",
+            "timeout_ms": 5000,
+            "max_memory_mb": 256
+          },
+          "output": {
+            "output_type": null,
+            "port_labels": [],
+            "output_ports": 1,
+            "output_schema": {}
+          },
+          "metadata": {
+            "icon": null,
+            "name": null,
+            "tags": [],
+            "color": null,
+            "label": "Apply Data Transform",
+            "enabled": true,
+            "visible": true,
+            "position": null,
+            "description": "Accepts the input payload and applies a configurable pure compute transformation, returning the result as output."
+          },
+          "saved_cell_id": "4ef8fb70-f159-40e9-a3a4-970a182ad160",
+          "saved_cell_version": 1
+        }
+      ],
+      "connections": []
+    },
+    {
+      "id": "2c16ad3f-5b08-4d83-9ad5-56b4b16cc954",
+      "name": "atomic test",
+      "description": "",
+      "neuron_type": "interactive",
+      "topology_profile": null,
+      "cells": [
+        {
+          "id": "cell_1782043231603_0",
+          "type": "compute_transform",
+          "input": {
+            "required": true,
+            "input_type": null,
+            "input_ports": 1,
+            "port_labels": [],
+            "input_schema": {
+              "type": "object"
+            }
+          },
+          "config": {},
+          "output": {
+            "output_type": null,
+            "port_labels": [],
+            "output_ports": 1,
+            "output_schema": {
+              "type": "object"
+            }
+          },
+          "metadata": {
+            "icon": null,
+            "name": null,
+            "tags": [],
+            "color": null,
+            "label": null,
+            "enabled": true,
+            "visible": true,
+            "position": null,
+            "description": null
+          },
+          "saved_cell_id": null,
+          "saved_cell_version": null
+        },
+        {
+          "id": "cell_1782043231603_1",
+          "type": "compute_cryptography",
+          "input": {
+            "required": true,
+            "input_type": null,
+            "input_ports": 1,
+            "port_labels": [],
+            "input_schema": {
+              "type": "object"
+            }
+          },
+          "config": {},
+          "output": {
+            "output_type": null,
+            "port_labels": [],
+            "output_ports": 1,
+            "output_schema": {
+              "type": "object"
+            }
+          },
+          "metadata": {
+            "icon": null,
+            "name": null,
+            "tags": [],
+            "color": null,
+            "label": null,
+            "enabled": true,
+            "visible": true,
+            "position": null,
+            "description": null
+          },
+          "saved_cell_id": null,
+          "saved_cell_version": null
+        }
+      ],
+      "connections": [
+        {
+          "mapping": {
+            "$": "$"
+          },
+          "to_cell": "cell_1782043231603_1",
+          "to_port": null,
+          "from_cell": "cell_1782043231603_0",
+          "from_port": null,
+          "branch_port": null
+        }
+      ]
+    }
+  ]
+}
