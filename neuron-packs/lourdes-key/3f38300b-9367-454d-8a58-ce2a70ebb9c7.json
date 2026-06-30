@@ -1,0 +1,51 @@
+{
+  "id": "3f38300b-9367-454d-8a58-ce2a70ebb9c7",
+  "name": "Atomic Compute Transform Pack",
+  "neurons": [
+    {
+      "id": "29226c97-bc1e-4d24-9308-2c69af96efc2",
+      "name": "Compute Transform",
+      "description": "",
+      "neuron_type": "interactive",
+      "topology_profile": "atomic_io",
+      "cells": [
+        {
+          "id": "c1",
+          "type": "compute_transform",
+          "input": {
+            "required": false,
+            "input_type": null,
+            "input_ports": 1,
+            "port_labels": [],
+            "input_schema": {}
+          },
+          "config": {
+            "user_code": "# Read from payload (dot-access) and assign output to `result`\n# Replace this pass-through with your actual transformation logic.\nresult = payload",
+            "timeout_ms": 5000,
+            "max_memory_mb": 256
+          },
+          "output": {
+            "output_type": null,
+            "port_labels": [],
+            "output_ports": 1,
+            "output_schema": {}
+          },
+          "metadata": {
+            "icon": null,
+            "name": null,
+            "tags": [],
+            "color": null,
+            "label": "Transform Data",
+            "enabled": true,
+            "visible": true,
+            "position": null,
+            "description": null
+          },
+          "saved_cell_id": "864d5688-e117-4349-a1fc-42ab81ac8a44",
+          "saved_cell_version": 1
+        }
+      ],
+      "connections": []
+    }
+  ]
+}
