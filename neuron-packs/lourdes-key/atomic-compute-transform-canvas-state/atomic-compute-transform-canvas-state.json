@@ -1,0 +1,51 @@
+{
+  "id": "77fc9998-a418-414a-a17f-e0294a6d9d89",
+  "name": "Atomic Compute Transform \u2014 canvas state",
+  "neurons": [
+    {
+      "id": "6ea21867-c6b2-4819-9fe1-8577f3d34bfc",
+      "name": "Atomic Compute Transform",
+      "description": "",
+      "neuron_type": "interactive",
+      "topology_profile": "atomic_io",
+      "cells": [
+        {
+          "id": "c1",
+          "type": "compute_transform",
+          "input": {
+            "required": false,
+            "input_type": null,
+            "input_ports": 1,
+            "port_labels": [],
+            "input_schema": {}
+          },
+          "config": {
+            "user_code": "# TODO: replace with your transformation logic\n# Read from `payload` using dot-access; assign final output to `result`.\nresult = {\n    \"transformed\": True,\n    \"data\": payload.data if hasattr(payload, 'data') else payload\n}",
+            "timeout_ms": 5000,
+            "max_memory_mb": 256
+          },
+          "output": {
+            "output_type": null,
+            "port_labels": [],
+            "output_ports": 1,
+            "output_schema": {}
+          },
+          "metadata": {
+            "icon": null,
+            "name": null,
+            "tags": [],
+            "color": null,
+            "label": "Apply Data Transform",
+            "enabled": true,
+            "visible": true,
+            "position": null,
+            "description": "Accepts payload input and returns a transformed result object."
+          },
+          "saved_cell_id": "d5c566e0-3966-4722-82e6-dda4ef3b2b8b",
+          "saved_cell_version": 1
+        }
+      ],
+      "connections": []
+    }
+  ]
+}
