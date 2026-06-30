@@ -1,0 +1,101 @@
+{
+  "id": "f206f8b3-c5cf-4373-9c1b-9ead8c36ff30",
+  "name": "test-1: Simple Data Processing Workflow",
+  "neurons": [
+    {
+      "id": "02e4ac50-7a52-4fc3-84c6-29764c3f4b2a",
+      "name": "test-1",
+      "description": "",
+      "neuron_type": "interactive",
+      "topology_profile": "linear_cognitive",
+      "cells": [
+        {
+          "id": "c1",
+          "type": "compute_transform",
+          "input": {
+            "required": false,
+            "input_type": null,
+            "input_ports": 1,
+            "port_labels": [],
+            "input_schema": {}
+          },
+          "config": {
+            "user_code": "# TODO: Replace with your transformation logic.\n# Read from `payload` (dot-access), assign output to `result`.\nresult = payload",
+            "timeout_ms": 5000,
+            "max_memory_mb": 256
+          },
+          "output": {
+            "output_type": null,
+            "port_labels": [],
+            "output_ports": 1,
+            "output_schema": {}
+          },
+          "metadata": {
+            "icon": null,
+            "name": null,
+            "tags": [],
+            "color": null,
+            "label": "Transform Input Data",
+            "enabled": true,
+            "visible": true,
+            "position": null,
+            "description": "Applies a pure compute transformation to the incoming payload, shaping or enriching the data before it is passed downstream."
+          },
+          "saved_cell_id": "3bfb44d8-7f4e-49e7-888a-525591cef371",
+          "saved_cell_version": 1
+        },
+        {
+          "id": "c2",
+          "type": "compute_cryptography",
+          "input": {
+            "required": false,
+            "input_type": null,
+            "input_ports": 1,
+            "port_labels": [],
+            "input_schema": {}
+          },
+          "config": {
+            "action": "encrypt",
+            "key_ref": "secret://vault/<your-encryption-key-secret>",
+            "encoding": "base64",
+            "algorithm": "aes-256",
+            "timeout_ms": 5000,
+            "max_memory_mb": 256,
+            "zeroize_on_completion": true
+          },
+          "output": {
+            "output_type": null,
+            "port_labels": [],
+            "output_ports": 1,
+            "output_schema": {}
+          },
+          "metadata": {
+            "icon": null,
+            "name": null,
+            "tags": [],
+            "color": null,
+            "label": "Encrypt Transformed Data",
+            "enabled": true,
+            "visible": true,
+            "position": null,
+            "description": "Performs cryptographic processing (e.g. encryption, signing, or hashing) on the output produced by the Transform cell."
+          },
+          "saved_cell_id": "7dfe310e-6a88-4433-8751-c9221485444a",
+          "saved_cell_version": 1
+        }
+      ],
+      "connections": [
+        {
+          "mapping": {
+            "$.result": "$.payload"
+          },
+          "to_cell": "c2",
+          "to_port": null,
+          "from_cell": "c1",
+          "from_port": null,
+          "branch_port": null
+        }
+      ]
+    }
+  ]
+}
