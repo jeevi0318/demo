@@ -10,7 +10,7 @@ This pack is managed and version-controlled. Pack ID: `f206f8b3-c5cf-4373-9c1b-9
 - **Topology Profile**: `linear_cognitive`
 
 **Description**:
-
+Receives incoming data, processes and transforms it via a Compute Transform cell, then encrypts the output using a Compute Cryptography cell.
 
 #### Topology Diagram
 

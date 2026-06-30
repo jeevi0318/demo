@@ -5,7 +5,7 @@
     {
       "id": "02e4ac50-7a52-4fc3-84c6-29764c3f4b2a",
       "name": "test-1",
-      "description": "",
+      "description": "Receives incoming data, processes and transforms it via a Compute Transform cell, then encrypts the output using a Compute Cryptography cell.",
       "neuron_type": "interactive",
       "topology_profile": "linear_cognitive",
       "cells": [
