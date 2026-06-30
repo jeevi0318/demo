@@ -1,0 +1,54 @@
+{
+  "id": "4189a3df-d2fe-4387-bf66-3e4aa84e8e61",
+  "name": "Compute Transform Neuron Pack",
+  "neurons": [
+    {
+      "id": "a72137bb-2028-46fb-be00-65d8aea7b6d2",
+      "name": "Data Transform",
+      "description": "",
+      "neuron_type": "interactive",
+      "topology_profile": "atomic_io",
+      "cells": [
+        {
+          "id": "c1",
+          "type": "compute_transform",
+          "input": {
+            "required": false,
+            "input_type": null,
+            "input_ports": 1,
+            "port_labels": [],
+            "input_schema": {}
+          },
+          "config": {
+            "user_code": "# TODO: Replace with your transformation logic.\n# Read inputs via `payload` (dot-access), e.g. payload.my_field\n# Assign your final output to `result`\n\nresult = dict(payload)",
+            "timeout_ms": 30000,
+            "max_memory_mb": 256
+          },
+          "output": {
+            "output_type": null,
+            "port_labels": [],
+            "output_ports": 1,
+            "output_schema": {}
+          },
+          "metadata": {
+            "icon": null,
+            "name": null,
+            "tags": [],
+            "color": null,
+            "label": "Run Data Transformation",
+            "enabled": true,
+            "visible": true,
+            "position": {
+              "x": 0,
+              "y": 0
+            },
+            "description": null
+          },
+          "saved_cell_id": "86c6fba3-8ebf-4f5f-93da-a2571a3fe6d3",
+          "saved_cell_version": 1
+        }
+      ],
+      "connections": []
+    }
+  ]
+}
