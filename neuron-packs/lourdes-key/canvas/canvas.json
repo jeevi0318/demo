@@ -164,6 +164,59 @@
           "branch_port": null
         }
       ]
+    },
+    {
+      "id": "05c53216-0844-4cf6-8fc2-d96bd1ea7a1f",
+      "name": "Untitled 1",
+      "description": "",
+      "neuron_type": "interactive",
+      "topology_profile": null,
+      "cells": [
+        {
+          "id": "cell_1782816854971_0",
+          "type": "compute_cryptography",
+          "input": {
+            "required": true,
+            "input_type": null,
+            "input_ports": 1,
+            "port_labels": [],
+            "input_schema": {
+              "type": "object"
+            }
+          },
+          "config": {
+            "action": "hash",
+            "key_ref": null,
+            "encoding": "hex",
+            "algorithm": "sha256",
+            "timeout_ms": 30000,
+            "max_memory_mb": 128,
+            "zeroize_on_completion": true
+          },
+          "output": {
+            "output_type": null,
+            "port_labels": [],
+            "output_ports": 1,
+            "output_schema": {
+              "type": "object"
+            }
+          },
+          "metadata": {
+            "icon": null,
+            "name": null,
+            "tags": [],
+            "color": null,
+            "label": "Compute Cryptography",
+            "enabled": true,
+            "visible": true,
+            "position": null,
+            "description": null
+          },
+          "saved_cell_id": null,
+          "saved_cell_version": null
+        }
+      ],
+      "connections": []
     }
   ]
 }

@@ -67,28 +67,77 @@ graph TD
 #### Components (Cells)
 
 - **Unnamed Cell** (`compute_transform`)
-  * **Input Schema**:
-    ```json
-    {
-      "type": "object"
-    }
-    ```
-  * **Output Schema**:
-    ```json
-    {
-      "type": "object"
-    }
-    ```
+  * <details>
+      <summary><b>Input Schema</b></summary>
+
+      ```json
+      {
+        "type": "object"
+      }
+      ```
+    </details>
+  * <details>
+      <summary><b>Output Schema</b></summary>
+
+      ```json
+      {
+        "type": "object"
+      }
+      ```
+    </details>
 - **Unnamed Cell** (`compute_cryptography`)
-  * **Input Schema**:
-    ```json
-    {
-      "type": "object"
-    }
-    ```
-  * **Output Schema**:
-    ```json
-    {
-      "type": "object"
-    }
-    ```
+  * <details>
+      <summary><b>Input Schema</b></summary>
+
+      ```json
+      {
+        "type": "object"
+      }
+      ```
+    </details>
+  * <details>
+      <summary><b>Output Schema</b></summary>
+
+      ```json
+      {
+        "type": "object"
+      }
+      ```
+    </details>
+
+### Neuron: Untitled 1
+
+- **Type**: `interactive`
+- **Topology Profile**: `None`
+
+**Description**:
+
+
+#### Topology Diagram
+
+```mermaid
+graph TD
+  cell_1782816854971_0["Compute Cryptography"]
+```
+
+#### Components (Cells)
+
+- **Compute Cryptography** (`compute_cryptography`)
+  * <details>
+      <summary><b>Input Schema</b></summary>
+
+      ```json
+      {
+        "type": "object"
+      }
+      ```
+    </details>
+  * <details>
+      <summary><b>Output Schema</b></summary>
+
+      ```json
+      {
+        "type": "object"
+      }
+      ```
+    </details>
