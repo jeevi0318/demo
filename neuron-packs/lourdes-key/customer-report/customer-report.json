@@ -1,0 +1,113 @@
+{
+  "id": "e5ff9a84-49fa-4fd8-bfe9-89dd8aba9d40",
+  "name": "Customer Report",
+  "neurons": [
+    {
+      "id": "938e6b9a-3850-4fc7-9ff5-7517ff68866a",
+      "name": "Fetch Orders",
+      "description": "",
+      "neuron_type": "interactive",
+      "topology_profile": "linear_cognitive",
+      "cells": [
+        {
+          "id": "c1",
+          "type": "io_http",
+          "input": {
+            "required": false,
+            "input_type": null,
+            "input_ports": 1,
+            "port_labels": [],
+            "input_schema": {}
+          },
+          "config": {
+            "operation": {
+              "body": null,
+              "path": {},
+              "query": {},
+              "method": "GET"
+            },
+            "connection": {
+              "url": "<UNKNOWN: customer orders API endpoint URL \u2014 e.g. https://api.example.com/v1/orders>",
+              "auth": {
+                "type": "header",
+                "header_name": "Authorization",
+                "header_value": "secret://vault/<your-orders-api-key-secret-name>"
+              },
+              "protocol": "http"
+            },
+            "timeout_ms": 15000,
+            "max_retries": 3,
+            "max_memory_mb": 128,
+            "retry_backoff_ms": 500
+          },
+          "output": {
+            "output_type": null,
+            "port_labels": [],
+            "output_ports": 1,
+            "output_schema": {}
+          },
+          "metadata": {
+            "icon": null,
+            "name": null,
+            "tags": [],
+            "color": null,
+            "label": "Fetch Orders from API",
+            "enabled": true,
+            "visible": true,
+            "position": null,
+            "description": "Sends an outbound HTTP GET request to the customer orders endpoint and captures the raw order payload for downstream processing."
+          },
+          "saved_cell_id": "d2db6f4d-c5d3-4f52-888c-8a05ca719e57",
+          "saved_cell_version": 1
+        },
+        {
+          "id": "c2",
+          "type": "compute_transform",
+          "input": {
+            "required": false,
+            "input_type": null,
+            "input_ports": 1,
+            "port_labels": [],
+            "input_schema": {}
+          },
+          "config": {
+            "user_code": "orders = payload.body if isinstance(payload.body, list) else (payload.body.get('orders') or payload.body.get('data') or [])\n\nsummary = []\nfor order in orders:\n    summary.append({\n        'order_id': order.get('id'),\n        'status': order.get('status'),\n        'total': order.get('total'),\n        'customer_ref': order.get('customer_ref'),\n    })\n\nresult = {\n    'report': summary,\n    'total_orders': len(summary),\n    'statuses': list({o['status'] for o in summary if o.get('status')}),\n}",
+            "timeout_ms": 10000,
+            "max_memory_mb": 256
+          },
+          "output": {
+            "output_type": null,
+            "port_labels": [],
+            "output_ports": 1,
+            "output_schema": {}
+          },
+          "metadata": {
+            "icon": null,
+            "name": null,
+            "tags": [],
+            "color": null,
+            "label": "Transform Orders to Summary Report",
+            "enabled": true,
+            "visible": true,
+            "position": null,
+            "description": "Receives the raw order payload and aggregates it into a structured summary report, extracting key fields such as order IDs, statuses, totals, and customer references."
+          },
+          "saved_cell_id": "e0398956-2639-4145-bacc-daeef9a0a60a",
+          "saved_cell_version": 1
+        }
+      ],
+      "connections": [
+        {
+          "mapping": {
+            "$.body": "$.payload.body"
+          },
+          "to_cell": "c2",
+          "to_port": null,
+          "from_cell": "c1",
+          "from_port": null,
+          "branch_port": null
+        }
+      ]
+    }
+  ]
+}
